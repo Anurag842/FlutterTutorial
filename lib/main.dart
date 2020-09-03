@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 void main() => runApp(App());
 
 class App extends StatelessWidget {
-  void answerQuestion() {
-    print("Answer");
-  }
+  var index = 0;
+
+  void answerQuestion() => index = index + 1;
 
   @override //overrides the build method of statelesswidget
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class App extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text(questions.elementAt(0)),
+            Text(questions[index]),
             RaisedButton(
               child: Text('Answer 1'),
               onPressed: answerQuestion,
