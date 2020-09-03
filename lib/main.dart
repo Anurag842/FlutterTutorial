@@ -6,10 +6,22 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(App());
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return AppState();
+  }
+}
+
+class AppState extends State<App> {
   var index = 0;
 
-  void answerQuestion() => index = index + 1;
+  void answerQuestion() {
+    setState(() {
+      index = index + 1;
+    });
+  }
 
   @override //overrides the build method of statelesswidget
   Widget build(BuildContext context) {
